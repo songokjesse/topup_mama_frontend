@@ -1,7 +1,22 @@
 import styles from "../../styles/Book.module.css";
 import Head from "next/head";
 import Image from "next/image";
-function Comments() {
+
+// This function gets called at build time
+export async function getStaticProps() {
+    // Call an external API endpoint to get posts
+    const res = await fetch('https://topupmama-backend.herokuapp.com/api/v1/comments')
+    const comments = await res.json()
+
+    // By returning { props: { posts } }, the Blog component
+    // will receive `posts` as a prop at build time
+    return {
+        props: {
+            comments,
+        },
+    }
+}
+function Comments({comments}) {
     return (
         <div className={styles.container}>
             <Head>
@@ -14,6 +29,17 @@ function Comments() {
                 <h1 className={styles.title}>
                     Comments
                 </h1>
+
+                {comments.map((comment) => (
+                    // eslint-disable-next-line react/jsx-key
+                    <div className={styles.card}>
+                        Book ID:  {comment.book_id} <br/>
+                        Comment: {comment.comment} <br/>
+                        IP Address: {comment.ip_address} <br/>
+                        Created At: {comment.created_at}
+                    </div>
+                ))}
+
 
             </main>
             <footer className={styles.footer}>
