@@ -13,7 +13,7 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Book Database powered by Nextjs and Lumen API
+          Book Database
         </h1>
 
 
@@ -36,7 +36,7 @@ export default function Home() {
           Powered by{' '}
           <span className={styles.logo}>
             <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
+          </span> & LumenAPI
         </a>
       </footer>
     </div>
