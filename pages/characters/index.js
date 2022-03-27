@@ -28,7 +28,7 @@ function Characters({characters}) {
                 <h1 className={styles.title}>
                     Characters
                 </h1>
-                Character Totals: {characters.character_totals}
+                Total Characters Retrieved : {characters.character_totals}
 
                 {characters.character_data.map((character) => (
                     // eslint-disable-next-line react/jsx-key
