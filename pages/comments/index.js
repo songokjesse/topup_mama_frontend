@@ -3,7 +3,7 @@ import Head from "next/head";
 import Image from "next/image";
 
 // This function gets called at build time
-export async function getStaticProps() {
+export async function getServerSideProps() {
     // Call an external API endpoint to get posts
     const res = await fetch('https://topupmama-backend.herokuapp.com/api/v1/comments')
     const comments = await res.json()
