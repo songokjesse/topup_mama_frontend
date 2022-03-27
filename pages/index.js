@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
+
 export default function Home() {
   return (
     <div className={styles.container}>
@@ -16,13 +17,19 @@ export default function Home() {
           Book Database
         </h1>
 
-
         <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
+            <a href="books" className={styles.card}>
+            <h2>Books &rarr;</h2>
+            <p>Find list of Books</p>
+            </a>
+            <a href="characters" className={styles.card}>
+                <h2>Characters &rarr;</h2>
+                <p>Find list of Characters</p>
+            </a>
+            <a href="comments" className={styles.card}>
+                <h2>Comments &rarr;</h2>
+                <p>Find & Add comments</p>
+            </a>
 
         </div>
       </main>
@@ -36,7 +43,8 @@ export default function Home() {
           Powered by{' '}
           <span className={styles.logo}>
             <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span> & LumenAPI
+          </span>
+            &nbsp; with &nbsp; <b>LumenAPI</b>
         </a>
       </footer>
     </div>
