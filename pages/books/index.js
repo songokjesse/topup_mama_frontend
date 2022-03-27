@@ -35,7 +35,7 @@ function Books({books}) {
                     <div className={styles.card}>
                         Book Name:  {book.name} <br/>
                         Authors: {book.authors} <br/>
-                        Comments: {book.comments}
+                        Comments: {book.comments_count}
                     </div>
                 ))}
 
